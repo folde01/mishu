@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+#noteInput {
+    display: none;
+}
+
+#doneCreatingButton {
+    display: none;
+}
+
+#doneUpdatingButton {
+    display: none;
+}
+
+#deleteButton {
+    display: none;
+}
+
+#cancelButton {
+    display: none;
+}
