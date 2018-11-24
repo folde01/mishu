@@ -62,15 +62,18 @@ function createNoteLI(){
 saveNewNoteButton.addEventListener('click', function(){
     var li = createNoteLI();
     notesDisplay.insertBefore(li, notesDisplay.firstChild);
-    //notesDisplay.appendChild(li);
     initWindow();
 });
 
-
 saveUpdatedNoteButton.addEventListener('click', function(){
     var li = createNoteLI();
-    notesDisplay.insertBefore(li, notesDisplay.firstChild);
-    notesDisplay.removeChild(liBeingEdited);
+    var existingNoteText = liBeingEdited.childNodes[1].textContent;
+
+    // only update if note has changed
+    if (li.childNodes[1].textContent !== existingNoteText) {
+        notesDisplay.insertBefore(li, notesDisplay.firstChild);
+        notesDisplay.removeChild(liBeingEdited);
+    }
     liBeingEdited = null;
     initWindow();
 });
