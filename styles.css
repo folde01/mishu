@@ -3,22 +3,6 @@ body {
     color: white;
 }
 
-#noteInput {
-    display: none;
-}
-
-#doneCreatingButton {
-    display: none;
-}
-
-#doneUpdatingButton {
-    display: none;
-}
-
-#deleteButton {
-    display: none;
-}
-
-#cancelButton {
+#noteInput, #doneCreatingButton, #saveNewNoteButton, #saveUpdatedNoteButton, #deleteButton, #cancelButton {
     display: none;
 }
