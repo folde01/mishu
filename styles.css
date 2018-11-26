@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
-#noteInput, #doneCreatingButton, #saveNewNoteButton, #saveUpdatedNoteButton, #deleteButton, #cancelButton {
+button, input {
     display: none;
+}
+
+#newNote {
+    display: inline;
 }
