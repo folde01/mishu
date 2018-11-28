@@ -12,19 +12,23 @@ var notesDisplay = document.getElementById('notesDisplay');
 var liBeingEdited = null;
 var notes = [];
 
-function initWindow() {
+function enterViewMode() {
+    // sets up viewing
     noteInput.value = "";
 
-    newNoteButton.style.display = 'inline';
+    newNoteButton.classList.add('displayed');
+
     if (notes.length > 1) {
-        sortByDateAscendingButton.style.display = 'inline';
+        sortByDateAscendingButton.classList.add('displayed');
     }
-    noteInput.style.display = 'none';
-    saveNewNoteButton.style.display = 'none';
-    saveUpdatedNoteButton.style.display = 'none';
-    deleteButton.style.display = 'none';
-    cancelButton.style.display = 'none';
-    notesDisplay.style.display = 'block';
+    noteInput.classList.remove('displayed');
+    //notesDisplay.style.display = 'block';
+    notesDisplay.classList.add('displayed');
+
+    saveNewNoteButton.classList.remove('displayed');
+    saveUpdatedNoteButton.classList.remove('displayed');
+    deleteButton.classList.remove('displayed');
+    cancelButton.classList.remove('displayed');
 
     notes.sort(function(a, b) {return b.date - a.date});
     notesDisplayParent = notesDisplay.parentNode;
@@ -37,16 +41,28 @@ function initWindow() {
     notesDisplay = newNotesDisplay;
 }
 
+function enterNewNoteMode() {
+    newNoteButton.classList.remove('displayed');
+    sortByDateAscendingButton.classList.remove('displayed');
+    sortByDateDescendingButton.classList.remove('displayed');
+    noteInput.classList.add('displayed');
+    saveNewNoteButton.classList.add('displayed');
+    cancelButton.classList.add('displayed');
+    notesDisplay.classList.remove('displayed');
 
-function editNote(li){
-    notesDisplay.style.display = 'none';
-    newNoteButton.style.display = 'none';
-    sortByDateAscendingButton.style.display = 'none';
-    sortByDateDescendingButton.style.display = 'none';
-    noteInput.style.display = 'inline';
-    saveUpdatedNoteButton.style.display = 'inline';
-    deleteButton.style.display = 'inline';
-    cancelButton.style.display = 'inline';
+}
+
+function enterEditMode(li){
+    // invisible
+    newNoteButton.classList.remove('displayed');
+    sortByDateAscendingButton.classList.remove('displayed');
+    sortByDateDescendingButton.classList.remove('displayed');
+    notesDisplay.classList.remove('displayed');
+    noteInput.classList.add('displayed');
+    saveUpdatedNoteButton.classList.add('displayed');
+    deleteButton.classList.add('displayed');
+    cancelButton.classList.add('displayed');
+
     var p = li.childNodes[1];
     noteInput.value = p.textContent;
     liBeingEdited = li;
@@ -86,7 +102,7 @@ class Note {
         li.setAttribute('id', this.getHtmlID());
         li.setAttribute('class', 'note');
         li.addEventListener('click', function(){
-            editNote(li);
+            enterEditMode(li);
         });
 
         return li;
@@ -107,7 +123,7 @@ Note.nextID = 1;
 saveNewNoteButton.addEventListener('click', function(){
     var note = new Note(new Date(), noteInput.value);
     note.save();
-    initWindow();
+    enterViewMode();
 });
 
 saveUpdatedNoteButton.addEventListener('click', function(){
@@ -124,7 +140,7 @@ saveUpdatedNoteButton.addEventListener('click', function(){
         note.content = noteInput.value;
         note.date = new Date();
     }
-    initWindow();
+    enterViewMode();
 });
 
 deleteButton.addEventListener('click', function(){
@@ -134,19 +150,15 @@ deleteButton.addEventListener('click', function(){
             notes.splice(i, 1);
         }
     }
-    initWindow();
+    enterViewMode();
 });
 
 newNoteButton.addEventListener('click', function(){
-    newNoteButton.style.display = 'none';
-    noteInput.style.display = 'inline';
-    saveNewNoteButton.style.display = 'inline';
-    cancelButton.style.display = 'inline';
-    notesDisplay.style.display = 'none';
+    enterNewNoteMode();
 });
 
 cancelButton.addEventListener('click', function(){
-    initWindow();
+    enterViewMode();
 });
 
 sortByDateAscendingButton.addEventListener('click', function(){
@@ -159,8 +171,8 @@ sortByDateAscendingButton.addEventListener('click', function(){
     notesDisplayParent.replaceChild(newNotesDisplay, notesDisplay);
     newNotesDisplay.setAttribute('id', 'notesDisplay');
     notesDisplay = newNotesDisplay;
-    sortByDateDescendingButton.style.display = 'inline';
-    sortByDateAscendingButton.style.display = 'none';
+    sortByDateAscendingButton.classList.remove('displayed');
+    sortByDateDescendingButton.classList.add('displayed');
 });
 
 sortByDateDescendingButton.addEventListener('click', function(){
@@ -173,6 +185,8 @@ sortByDateDescendingButton.addEventListener('click', function(){
     notesDisplayParent.replaceChild(newNotesDisplay, notesDisplay);
     newNotesDisplay.setAttribute('id', 'notesDisplay');
     notesDisplay = newNotesDisplay;
-    sortByDateDescendingButton.style.display = 'none';
-    sortByDateAscendingButton.style.display = 'inline';
+    sortByDateAscendingButton.classList.add('displayed');
+    sortByDateDescendingButton.classList.remove('displayed');
 });
+
+enterViewMode();

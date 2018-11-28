@@ -7,6 +7,6 @@ button, input {
     display: none;
 }
 
-#newNote {
+.displayed {
     display: inline;
 }
