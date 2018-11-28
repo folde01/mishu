@@ -23,7 +23,6 @@ function enterViewMode() {
     }
     noteInput.classList.remove('displayed');
     //notesDisplay.style.display = 'block';
-    notesDisplay.classList.add('displayed');
 
     saveNewNoteButton.classList.remove('displayed');
     saveUpdatedNoteButton.classList.remove('displayed');
@@ -39,6 +38,7 @@ function enterViewMode() {
     notesDisplayParent.replaceChild(newNotesDisplay, notesDisplay);
     newNotesDisplay.setAttribute('id', 'notesDisplay');
     notesDisplay = newNotesDisplay;
+    notesDisplay.classList.add('displayed');
 }
 
 function enterNewNoteMode() {
@@ -171,6 +171,7 @@ sortByDateAscendingButton.addEventListener('click', function(){
     notesDisplayParent.replaceChild(newNotesDisplay, notesDisplay);
     newNotesDisplay.setAttribute('id', 'notesDisplay');
     notesDisplay = newNotesDisplay;
+    notesDisplay.classList.add('displayed');
     sortByDateAscendingButton.classList.remove('displayed');
     sortByDateDescendingButton.classList.add('displayed');
 });
@@ -185,6 +186,7 @@ sortByDateDescendingButton.addEventListener('click', function(){
     notesDisplayParent.replaceChild(newNotesDisplay, notesDisplay);
     newNotesDisplay.setAttribute('id', 'notesDisplay');
     notesDisplay = newNotesDisplay;
+    notesDisplay.classList.add('displayed');
     sortByDateAscendingButton.classList.add('displayed');
     sortByDateDescendingButton.classList.remove('displayed');
 });

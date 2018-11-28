@@ -3,10 +3,14 @@ body {
     color: white;
 }
 
-button, input {
+button, input, ul {
     display: none;
 }
 
 .displayed {
     display: inline;
+}
+
+#notesDisplay.displayed {
+    display: block;
 }
