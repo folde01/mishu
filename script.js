@@ -122,6 +122,9 @@ class Note {
     save() {
         notes.push(this);
     }
+    getPreviewText() {
+        return this.content.slice(0,200);
+    }
     getHtmlID() {
         return 'note-' + this.id;
     }
