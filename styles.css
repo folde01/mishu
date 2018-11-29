@@ -1,5 +1,13 @@
+/* TODO: buttons, editor, date, sort modal, hover over date to get created time */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    background-color: black;
+    background-color: rgb(26, 24, 24);
+    /*background-color: rgb(78, 74, 74);*/
     color: white;
 }
 
@@ -13,4 +21,22 @@ button, input, ul {
 
 #notesDisplay.displayed {
     display: block;
+}
+
+.note {
+    padding: 0.8em;
+    margin: 0.4em;
+    border-left: 0.1em solid lightslategray;
+    background-color: rgb(35, 53, 78);
+    line-height: 1.4em;
+    border-radius: 0.2em;
+}
+
+.note:hover {
+    transition: 0.1s;
+    background-color: rgb(42, 60, 85);
+}
+.date {
+    display: inline-block;
+    margin-bottom: 0.5em;
 }
