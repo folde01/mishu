@@ -7,12 +7,50 @@
 
 body {
     background-color: rgb(26, 24, 24);
-    /*background-color: rgb(78, 74, 74);*/
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    /*
+    font-family: Georgia, serif;
+    font-family: 'Source Serif Pro', serif;
+    font-family: 'PT Serif', serif;
+    */
+
+
 }
 
+h1 {
+    display: inline;
+    font-size: 3em;
+}
 button, input, ul {
     display: none;
+}
+
+
+#navButtons {
+    text-align: right;
+}
+
+#newNote {
+    border: 0;
+    font-weight: 900;
+    font-size: 4em;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    border: 0.05em solid white;
+    color: lightgray;
+    box-sizing: content-box; 
+    border-radius: 50%;
+    background-color: rgb(40, 43, 43);
+    margin: 20px;
+}
+
+#newNote:hover {
+    transition: 0.1s;
+    color: rgb(228, 228, 228);
+    background-color: rgb(45, 49, 49);
+    border-color: rgb(228, 228, 228);
 }
 
 .displayed {
@@ -24,19 +62,31 @@ button, input, ul {
 }
 
 .note {
+    list-style-type: none;
     padding: 0.8em;
+    padding: 2.8em;
     margin: 0.4em;
-    border-left: 0.1em solid lightslategray;
-    background-color: rgb(35, 53, 78);
-    line-height: 1.4em;
-    border-radius: 0.2em;
+    margin: 1.4em;
+    border-left: 0.05em solid rgb(72, 82, 92); 
+    background-color: rgb(36, 34, 34);
+    line-height: 1.5em;
+    border-radius: 0.15em;
+    color: rgb(179, 181, 202);
+    font-family: 'Noto Serif', serif;
 }
 
 .note:hover {
-    transition: 0.1s;
-    background-color: rgb(42, 60, 85);
+    transition: .2s;
+    transition: background-color 0.3s, color 0.15s, border-left 0.05s;
+    transition: background-color 0.2s, color 0.15s, border-left 0.05s;
+    background-color: rgb(40, 43, 43);
+    color: rgb(205, 206, 216);
+    border-left: 0.05em solid rgb(72, 82, 92, 0.5); 
+
 }
 .date {
     display: inline-block;
     margin-bottom: 0.5em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }

@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mishu - note taking app</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+
 </head>
+
 <body>
-    <h1>Mishu</h1>
-    <button id='newNote'>New note</button>
-    <button id='sortByDateAscending'>Sort by date ascending</button>
-    <button id='sortByDateDescending'>Sort by date descending</button>
+    <div class='topnav'>
+        <h1>MishuNote</h1>
+        <div class='topnav-right'>
+            <button id='newNote'>+</button>
+            <button id='sortByDateAscending'>Sort by date ascending</button>
+            <button id='sortByDateDescending'>Sort by date descending</button>
+        </div>
+    </div>
+
     <input type="text" id='noteInput'>
     <button id='saveNewNoteButton'>Save</button>
     <button id='saveUpdatedNoteButton'>Save</button>
@@ -20,4 +31,5 @@
     <ul id='notesDisplay'></ul>
     <script type="application/javascript" src="script.js"></script>
 </body>
+
 </html>
