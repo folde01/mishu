@@ -1,7 +1,3 @@
-//potential features to add: sort, search, tags, trash, links, attachments, formatting, back/forward buttons, preview, tabs, paging, persistence, import/export, login, sub-notes, relate, themes
-
-// next feature to add: preview of first n chars or m lines.
-
 var newNoteButton = document.getElementById('newNote');
 var sortByDateAscendingButton = document.getElementById('sortByDateAscending');
 var sortByDateDescendingButton = document.getElementById('sortByDateDescending');
@@ -123,7 +119,7 @@ class Note {
         notes.push(this);
     }
     getPreviewText() {
-        return this.content.slice(0,200);
+        return this.content.slice(0,200) + ' . . .';
     }
     getHtmlID() {
         return 'note-' + this.id;
@@ -148,7 +144,7 @@ class Note {
         var p = document.createElement('p');
         li.appendChild(p);
 
-        p.appendChild(document.createTextNode(this.content));
+        p.appendChild(document.createTextNode(this.getPreviewText()));
         li.setAttribute('id', this.getHtmlID());
         li.setAttribute('class', 'note');
         li.addEventListener('click', function () {

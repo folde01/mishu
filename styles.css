@@ -18,6 +18,15 @@ body {
 
 }
 
+#topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#topnav-buttons {
+    margin-right: 23px;
+}
+
 h1 {
     margin-left: 0.6em;
     margin-top: 0.5em;
@@ -28,13 +37,12 @@ button, input, ul {
     display: none;
 }
 
-
 #navButtons {
     text-align: right;
 }
 
 #newNote {
-    margin-left: 0.25em;
+    margin-top: 15px;
     font-weight: 900;
     font-size: 2em;
     width: 1.2em;
