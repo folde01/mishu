@@ -1,4 +1,8 @@
+
+var topNavButtons = document.getElementById('topnav-buttons');
 var newNoteButton = document.getElementById('newNote');
+var hamburger = document.getElementById('hamburger');
+var hamburgerMenu = document.getElementById('hamburgerMenu');
 var sortByDateAscendingButton = document.getElementById('sortByDateAscending');
 var sortByDateDescendingButton = document.getElementById('sortByDateDescending');
 var noteInput = document.getElementById('noteInput');
@@ -57,7 +61,9 @@ function enterViewMode() {
     // sets up viewing
     noteInput.value = "";
 
+    topNavButtons.classList.add('displayed');
     newNoteButton.classList.add('displayed');
+    hamburger.classList.add('displayed');
 
     if (notes.length > 1) {
         sortByDateAscendingButton.classList.add('displayed');
@@ -146,7 +152,7 @@ class Note {
 
         p.appendChild(document.createTextNode(this.getPreviewText()));
         li.setAttribute('id', this.getHtmlID());
-        li.setAttribute('class', 'note');
+        li.setAttribute('class', 'note displayed');
         li.addEventListener('click', function () {
             enterEditMode(li);
         });
@@ -205,6 +211,10 @@ newNoteButton.addEventListener('click', function () {
 
 cancelButton.addEventListener('click', function () {
     enterViewMode();
+});
+
+hamburger.addEventListener('click', function(){
+    hamburgerMenu.classList.toggle('displayed');
 });
 
 sortByDateAscendingButton.addEventListener('click', function () {

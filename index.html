@@ -16,11 +16,16 @@
 <body>
     <div id='topnav'>
         <h1>MishuNote</h1>
-        <div id='topnav-buttons'>
-            <button id='newNote'>+</button>
-            <button id='sortByDateAscending'>=</button>
-            <button id='sortByDateDescending'>=</button>
-        </div>
+        <ul id='topnav-buttons'>
+            <li id='newNote'>+</li>
+            <li id='hamburger'>
+                =
+                <ul id='hamburgerMenu'>
+                    <li id='sortByDateDescending'>Sort by date descending</li>
+                    <li id='sortByDateAscending'>Sort by date ascending</li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
     <input type="text" id='noteInput'>
