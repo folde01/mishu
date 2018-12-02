@@ -55,6 +55,19 @@ button, input, ul, li {
     width: 1.2em;
     height: 1.2em;
     line-height: em;
+    color: lightgray;
+    box-sizing: content-box; 
+    border-radius: 50%;
+    text-align: center;
+}
+/*
+#newNote {
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 2em;
+    width: 1.2em;
+    height: 1.2em;
+    line-height: em;
     border: 0.05em solid white;
     color: lightgray;
     box-sizing: content-box; 
@@ -64,6 +77,7 @@ button, input, ul, li {
     background-color: rgb(36, 34, 34);
     text-align: center;
 }
+*/
 
 #newNote:hover {
     transition: 0.1s;
@@ -81,6 +95,20 @@ button, input, ul, li {
     width: 1.2em;
     height: 1.2em;
     line-height: em;
+    color: lightgray;
+    box-sizing: content-box; 
+    text-align: center;
+}
+
+/*
+#hamburger{
+    position: relative;
+    margin-left: 0.25em;
+    font-weight: 400;
+    font-size: 2em;
+    width: 1.2em;
+    height: 1.2em;
+    line-height: em;
     border: 0.05em solid white;
     color: lightgray;
     box-sizing: content-box; 
@@ -90,6 +118,7 @@ button, input, ul, li {
     background-color: rgb(36, 34, 34);
     text-align: center;
 }
+*/
 
 li.note.displayed {
     display: block;
